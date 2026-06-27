@@ -49,5 +49,5 @@ To get the latest habits and training data, the model can first be ran in a "Pro
 Once the accuracy is satisfying enough, the model can be deployed. Every time it's triggered, it'll apply it's prediction to the entity, and of course record the dataframe 30 seconds later with its deviation.
 
 [^hass]: Here: Home Assistant
-[^sensors]: Note that sensors here do not explicitly need to be HASS Sensors. Any value, state or template can be a sensor.
+[^sensors]: Note that sensors here do not explicitly need to be HASS Sensors. Any value, or state works.
 [^lightweight]: Even lightweight is an overstatement. Models with 10 or even 50 input sensors predicting all the state data for even many entities at a time are minuscule, kilo- or megabytes in size and take practicly no time to infer. Training these models with 10000 dataframes will take minutes on any decently modern CPU.

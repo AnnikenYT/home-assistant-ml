@@ -1,8 +1,8 @@
 {
     "config": {
-        "sensors": [ // all sensors (can be home assistant templates)
+        "sensors": [ // all sensors (Influx: domain._entity_id(._field | "state"))
             "light.main_light",
-            "state_attr('light.main_light', 'brightness')",
+            "light.main_light.brightness",
             "sun.sun",
             "sensor.main_brightness",
             "sensor.presence_desk",
