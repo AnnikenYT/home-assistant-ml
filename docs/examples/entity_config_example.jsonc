@@ -1,0 +1,33 @@
+{
+    "config": {
+        "sensors": [ // all sensors (can be home assistant templates)
+            "light.main_light",
+            "state_attr('light.main_light', 'brightness')",
+            "sun.sun",
+            "sensor.main_brightness",
+            "sensor.presence_desk",
+            "sensor.presence_bed",
+            "sensor.presence_overall"
+        ],
+        "triggers": [ // which sensors trigger a prediction?
+            "light.main_light",
+            "sensor.presence_desk",
+            "sensor.presence_bed",
+            "sensor.presence_overall"
+        ],
+        "active_times": { // to prevent the model from predicting when it is not relevant.
+            "start": "00:06:00",
+            "end": "22:00:00"
+        },
+        "prediction": { // what the model is predicting
+            "light.main_light": {
+                "state": true,
+                "data": {
+                    "brightness": true,
+                    "temperature": true
+                }
+            }
+        },
+        "state_recording_delay": 30 // how many seconds to wait before recording the entity state.
+    }
+}

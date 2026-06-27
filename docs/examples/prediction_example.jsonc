@@ -1,0 +1,34 @@
+{
+    "sensors": {
+        "light.main_light": { // this sensor was the trigger for the prediction
+            "state": "on"
+        },
+        "state_attr('light.main_light', 'brightness')": {
+            "state": 255
+        },
+        "sun.sun": {
+            "state": "below_horizon"
+        },
+        "sensor.main_brightness": {
+            "state": 255
+        },
+        "sensor.presence_desk": {
+            "state": "off"
+        },
+        "sensor.presence_bed": {
+            "state": "off"
+        },
+        "sensor.presence_overall": {
+            "state": "on"
+        }
+    },
+    "prediction": {
+        "light.main_light": {
+            "state": "on",
+            "data": {
+                "brightness": 100,
+                "temperature": 2700
+            }
+        }
+    }
+}
