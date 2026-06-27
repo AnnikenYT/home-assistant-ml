@@ -7,7 +7,8 @@
             "sensor.main_brightness",
             "sensor.presence_desk",
             "sensor.presence_bed",
-            "sensor.presence_overall"
+            "sensor.presence_overall",
+            "sensor.time"
         ],
         "triggers": [ // which sensors trigger a prediction?
             "light.main_light",

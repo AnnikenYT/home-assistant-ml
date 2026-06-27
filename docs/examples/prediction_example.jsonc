@@ -20,6 +20,9 @@
         },
         "sensor.presence_overall": {
             "state": "on"
+        },
+        "sensor.time": {
+            "state": 1782561734000 // unix timestamp
         }
     },
     "prediction": {
