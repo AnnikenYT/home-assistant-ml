@@ -5,7 +5,7 @@ The goal is to allow home assistant to actually make proper predictions and lear
 
 
 > [!NOTE] Note on LLM usage in this project
->  I am personally not very familiar with machine learning, so I will probably use some LLM generated code here and there. This is first and foremost a learning project for me though, so the actually relevant parts will likely be done by hand.
+> I am personally not very familiar with machine learning, so I will probably use some LLM generated code here and there. This is first and foremost a learning project for me though, so the actually relevant parts will likely be done by hand.
 > So far, everything here is done by hand.
 
 ## Concept (High Level)
