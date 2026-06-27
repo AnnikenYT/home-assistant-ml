@@ -10,14 +10,14 @@ The goal is to allow home assistant to actually make proper predictions and lear
 
 ## Concept (High Level)
 
-Any entity with State in HASS[^1] can be made into a learning entity, but note that each entity essentially gets its own lightweight[^3] ml model.
+Any entity with State in HASS[^hass] can be made into a learning entity, but note that each entity essentially gets its own lightweight[^lightweight] ml model.
 
 I like having an example, so let's say we're in a 1 room apartment that has a `light.main_light` and a bunch of sensors. Now, we want the light to learn from our actions.
 
 For that, we first define an entity config:
 [Example Config](/docs/examples/entity_config_example.jsonc).
 This tells the supervisor 3 things:
-- Which sensors[^2] should the model use as input parameters for its prediction?
+- Which sensors[^sensors] should the model use as input parameters for its prediction?
 - Which of those sensors should _trigger_ a prediction?
 - Which state should actually be predicted?
 
@@ -47,6 +47,6 @@ To get the latest habits and training data, the model can first be ran in a "Pro
 
 Once the accuracy is satisfying enough, the model can be deployed. Every time it's triggered, it'll apply it's prediction to the entity, and of course record the dataframe 30 seconds later with its deviation.
 
-[^1]: Here: Home Assistant
-[^2]: Note that sensors here do not explicitly need to be HASS Sensors. Any value, state or template can be a sensor.
-[^3]: Even lightweight is an overstatement. Models with 10 or even 50 input sensors predicting all the state data for even many entities at a time are minuscule, kilo- or megabytes in size and take practicly no time to infer. Training these models with 10000 dataframes will take minutes on any decently modern CPU.
+[^hass]: Here: Home Assistant
+[^sensors]: Note that sensors here do not explicitly need to be HASS Sensors. Any value, state or template can be a sensor.
+[^lightweight]: Even lightweight is an overstatement. Models with 10 or even 50 input sensors predicting all the state data for even many entities at a time are minuscule, kilo- or megabytes in size and take practicly no time to infer. Training these models with 10000 dataframes will take minutes on any decently modern CPU.
